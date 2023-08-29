@@ -13,11 +13,11 @@ int partition( int arr[], int s, int e) {
         }
     }
 
-    //place pivot at right position
+    //place pivot at the correct position:
     int pivotIndex = s + cnt;
     swap(arr[pivotIndex], arr[s]);
 
-    //left and right wala part smbhal lete h 
+    //left and right wala part management:
     int i = s, j = e;
 
     while(i < pivotIndex && j > pivotIndex) {
@@ -47,20 +47,20 @@ void quickSort(int arr[], int s, int e) {
     if(s >= e) 
         return ;
 
-    //partitioon karenfe
+    //partition done:
     int p = partition(arr, s, e);
 
-    //left part sort karo
+    //left part sorting:
     quickSort(arr, s, p-1);
 
-    //right wala part sort karo
+    //right part sorting:
     quickSort(arr, p+1, e);
 
 }
 
 int main() {
 
-    int arr[10] = {2,4,1,6,9 ,9,9,9,9,9};
+    int arr[10] = {2,4,1,6,9,9,9,9,9,9};
     int n = 10;
 
     quickSort(arr, 0, n-1);
